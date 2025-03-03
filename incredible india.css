@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredible India</title>
+    <style>
+        body {
+            font-family: "Times New Roman", sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #ffe4e1;
+        }
+
+        h1 {
+            color: #d32f2f;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        section {
+            flex: 1 1 300px;
+            max-width: 400px;
+            padding: 20px;
+            background: #ffc0cb;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ffb6c1;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Incredible India</h1>
+    </header>
+    <div class="container" id="content"></div>
+    <a href="feedback.html"><button>Give Feedback</button></a>
+    
+    <script>
+        const sections = [
+            { title: "History", content: "Explore India's rich history from ancient civilizations to modern times." },
+            { title: "Festivals", content: "Discover vibrant festivals like Diwali, Holi, and Navratri." },
+            { title: "Cuisine", content: "Experience the diverse flavors of Indian cuisine from North to South." },
+            { title: "Art & Culture", content: "Immerse in traditional dance forms, music, and crafts." }
+        ];
+
+        const container = document.getElementById("content");
+
+        sections.forEach(section => {
+            let secElement = document.createElement("section");
+            secElement.innerHTML = `<h2>${section.title}</h2><p>${section.content}</p>`;
+            container.appendChild(secElement);
+        });
+    </script>
+</body>
+</html>
